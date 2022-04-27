@@ -10,20 +10,31 @@ import java.io.File;
 import java.io.IOException;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.Timer;
 
 
 public class Main {
 
+    private JLabel label;
+    private JLabel speed;
+    private JButton buttonClick;
+    private JButton buttonGetResult;
+    private JButton buttonReset;
 
+    private int d, count, rate, x;
+    private int[] array;
+    private JLabel l;
 
     public static void main(String[] args) {
         //rickRoll();
         cps();
+        //Ticker ticker = new Ticker();
+
     }
 
     public static void rickRoll(){
         JFrame f=new JFrame();//creating instance of JFrame
-
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JButton b=new JButton("Don't Click me");//creating instance of JButton
         b.setBounds(130,100,200, 40);//x axis, y axis, width, height
 
@@ -45,6 +56,7 @@ public class Main {
     }
 
     public static void cps(){
+
         final int[] click = {0};
         // Create frame with specific title
         final Frame[] frame = {new Frame("CPS")};
@@ -65,9 +77,6 @@ public class Main {
 
             }
 
-
-
-
         });
 
         // Add the components to the frame; by default, the frame has a border layout
@@ -79,6 +88,10 @@ public class Main {
         int height = 300;
         frame[0].setSize(width, height);
         frame[0].setVisible(true);
+
+
     }
+
+
 }
 
